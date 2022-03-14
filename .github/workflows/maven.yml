@@ -25,4 +25,4 @@ jobs:
     - name: TU
       run: mvn test
     - name: TI
-      run: mvn integration -test
+      run: mvn integration-test
