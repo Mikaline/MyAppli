@@ -37,3 +37,11 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       run: mvn -B org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=Mikaline_MyAppli
+    - name : Check out repository
+      uses : actions/checkout@v2
+    - name : Deploy to Heroku
+      uses : akhileshns/heroku-deploy@v3.12.12
+      with :
+        heroku_api_key: 00f17216-9946-4523-8b90-1e99086bcce2
+        heroku_app_name: cryptic-shelf-19650
+        heroku_email: emailbouchetrou@gmail.com
